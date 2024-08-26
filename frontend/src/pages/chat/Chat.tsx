@@ -87,7 +87,16 @@ const Chat = () => {
         console.log(new Date())
         console.log(messages);
         clearChat();
-        setMessages([]);
+
+        
+
+
+        setProcessMessages(messageStatus.Processing)
+        setMessages([])
+        setIsCitationPanelOpen(false);
+        setActiveCitation(undefined);
+        appStateContext?.dispatch({ type: 'UPDATE_CURRENT_CHAT', payload: null });
+        setProcessMessages(messageStatus.Done)
         setIsVisible(false);
         //newChat();
       };
